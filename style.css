@@ -1,31 +1,39 @@
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/normalize.min.css");
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/black-highlighter.min.css");
 
-/* ======================================================
-   VARIÁVEIS OFICIAIS DO BLACK HIGHLIGHTER
-   ====================================================== */
-
-:root,
-html,
-body {
-    --header-title: "INTELLIGENCE AGENCY" !important;
-    --header-subtitle: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION" !important;
+/* 1. Troca as variáveis globais */
+:root {
+    --header-title: "INTELLIGENCE AGENCY";
+    --header-subtitle: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION";
 }
 
+/* 2. Regra oficial: Oculta o texto padrão transparente */
+#header h1 a span,
+#header h2 span {
+    line-height: 0px !important;
+    max-height: 0px !important;
+    color: transparent !important;
+    text-shadow: none !important;
+}
+
+/* 3. Injeta o TÍTULO PRINCIPAL na posição oficial exata */
 #header h1 a::before {
     content: "INTELLIGENCE AGENCY" !important;
+    color: #ffffff !important;
 }
 
-#header h2::before {
+/* 4. Injeta o SUBTÍTULO na posição oficial exata (abaixo do título) */
+#header h2 span::before {
     content: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION" !important;
+    color: #f0f0f0 !important;
 }
 
-/* Oculta barras laterais e cabeçalhos redundantes */
+/* 5. Oculta barras e elementos extras */
 #side-bar, #top-bar, #page-title { 
     display: none !important; 
 }
 
-/* Centraliza o container principal */
+/* 6. Centraliza o container principal */
 #main-content {
     margin: 0 auto !important;
     padding: 20px !important;
