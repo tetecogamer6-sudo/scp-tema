@@ -3,41 +3,35 @@
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/black-highlighter.min.css");
 
 /* ======================================================
-   TEMA ESTÁVEL: INTELLIGENCE AGENCY
+   TEMA ESTÁVEL: INTELLIGENCE AGENCY (LIMPEZA TOTAL)
    ====================================================== */
 
-/* 1. Remove listas quebradas e menus soltos do topo */
+/* Oculta completamente qualquer menu de topo ou barra lateral */
 #top-bar,
-#top-bar ul,
-#top-bar li,
 #side-bar,
-#page-title {
+#page-title,
+#main-content > .page-tags {
     display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
 }
 
-/* 2. Oculta os textos brutos padrão do Wikidot */
+/* Oculta textos e spans antigos sem quebrar o layout */
 #header h1 a span,
 #header h2 span,
 #header h2 {
     font-size: 0 !important;
     line-height: 0 !important;
     color: transparent !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    display: none !important;
 }
 
-/* 3. Posiciona o bloco de texto ao lado do logotipo */
+/* Centraliza o bloco de texto ao lado do logo do tema */
 #header h1 {
     position: absolute !important;
-    top: 2rem !important;
+    top: 2.2rem !important;
     left: 8.5rem !important;
     margin: 0 !important;
     padding: 0 !important;
-    z-index: 20 !important;
+    z-index: 50 !important;
 }
 
 #header h1 a {
@@ -46,46 +40,45 @@
     text-decoration: none !important;
 }
 
-/* TÍTULO PRINCIPAL */
+/* Título Principal */
 #header h1 a::before {
     content: "INTELLIGENCE AGENCY" !important;
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 1.85rem !important;
     font-weight: 900 !important;
     color: #ffffff !important;
-    line-height: 1 !important;
+    line-height: 1.1 !important;
     letter-spacing: -0.02em !important;
     text-transform: uppercase !important;
     text-shadow: 0.05rem 0.05rem 0.15rem #000, 0 0 0.5rem #000 !important;
     display: block !important;
-    margin-bottom: 5px !important;
 }
 
-/* SUBTÍTULO (Fixado embaixo do título principal) */
+/* Subtítulo */
 #header h1 a::after {
     content: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION" !important;
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
     font-size: 0.72rem !important;
     font-weight: 700 !important;
-    color: #dcdcdc !important;
-    line-height: 1 !important;
+    color: #f0f0f0 !important;
+    line-height: 1.2 !important;
     letter-spacing: 0.06em !important;
     text-transform: uppercase !important;
     text-shadow: 0.05rem 0.05rem 0.15rem #000, 0 0 0.4rem #000 !important;
     display: block !important;
+    margin-top: 4px !important;
 }
 
-/* 4. Reseta os espaços em branco e centraliza o conteúdo */
+/* Ajusta o container principal da página */
 #content-wrap {
-    position: relative !important;
     margin: 0 auto !important;
-    padding-top: 15px !important;
+    padding-top: 20px !important;
     width: 100% !important;
     max-width: 900px !important;
 }
 
 #main-content {
     margin: 0 auto !important;
-    padding: 10px 20px !important;
+    padding: 0 15px !important;
     width: 100% !important;
 }
