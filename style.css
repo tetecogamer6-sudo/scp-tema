@@ -2,7 +2,7 @@
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/black-highlighter.min.css");
 
 /* ======================================================
-   TEMA CUSTOMIZADO: INTELLIGENCE AGENCY
+   TEMA GLOBAL: INTELLIGENCE AGENCY
    ====================================================== */
 
 :root {
@@ -10,14 +10,13 @@
     --header-subtitle: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION";
 }
 
-/* Oculta o texto padrão em navegadores que não leem as variáveis */
+/* Oculta o texto padrão antigo e insere os títulos do tema */
 #header h1 a span,
 #header h2 span {
     font-size: 0 !important;
     visibility: hidden !important;
 }
 
-/* Título Principal */
 #header h1 a::before {
     content: "INTELLIGENCE AGENCY" !important;
     font-size: 1.8rem !important;
@@ -27,7 +26,6 @@
     letter-spacing: 1px;
 }
 
-/* Subtítulo */
 #header h2::before {
     content: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION" !important;
     font-size: 0.8rem !important;
@@ -38,12 +36,12 @@
     letter-spacing: 0.5px;
 }
 
-/* Remove a barra lateral padrão para focar no conteúdo */
-#side-bar { 
+/* Oculta barras laterais e elementos padrão */
+#side-bar, #top-bar, #page-title { 
     display: none !important; 
 }
 
-/* Centraliza e ajusta o corpo da página */
+/* Centraliza e expande o container de todas as páginas */
 #main-content {
     margin: 0 auto !important;
     padding: 20px !important;
