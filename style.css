@@ -1,42 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,700&display=swap");
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/normalize.min.css");
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/black-highlighter.min.css");
 
-/* 1. Troca as variáveis globais */
-:root {
-    --header-title: "INTELLIGENCE AGENCY";
-    --header-subtitle: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION";
+/* ======================================================
+   TEMA ESTÁVEL: INTELLIGENCE AGENCY
+   ====================================================== */
+
+/* 1. Remove listas quebradas e menus soltos do topo */
+#top-bar,
+#top-bar ul,
+#top-bar li,
+#side-bar,
+#page-title {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* 2. Regra oficial: Oculta o texto padrão transparente */
+/* 2. Oculta os textos brutos padrão do Wikidot */
 #header h1 a span,
-#header h2 span {
-    line-height: 0px !important;
-    max-height: 0px !important;
+#header h2 span,
+#header h2 {
+    font-size: 0 !important;
+    line-height: 0 !important;
     color: transparent !important;
-    text-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
-/* 3. Injeta o TÍTULO PRINCIPAL na posição oficial exata */
+/* 3. Posiciona o bloco de texto ao lado do logotipo */
+#header h1 {
+    position: absolute !important;
+    top: 2rem !important;
+    left: 8.5rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 20 !important;
+}
+
+#header h1 a {
+    display: flex !important;
+    flex-direction: column !important;
+    text-decoration: none !important;
+}
+
+/* TÍTULO PRINCIPAL */
 #header h1 a::before {
     content: "INTELLIGENCE AGENCY" !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 1.85rem !important;
+    font-weight: 900 !important;
     color: #ffffff !important;
+    line-height: 1 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: uppercase !important;
+    text-shadow: 0.05rem 0.05rem 0.15rem #000, 0 0 0.5rem #000 !important;
+    display: block !important;
+    margin-bottom: 5px !important;
 }
 
-/* 4. Injeta o SUBTÍTULO na posição oficial exata (abaixo do título) */
-#header h2 span::before {
+/* SUBTÍTULO (Fixado embaixo do título principal) */
+#header h1 a::after {
     content: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION" !important;
-    color: #f0f0f0 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    color: #dcdcdc !important;
+    line-height: 1 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    text-shadow: 0.05rem 0.05rem 0.15rem #000, 0 0 0.4rem #000 !important;
+    display: block !important;
 }
 
-/* 5. Oculta barras e elementos extras */
-#side-bar, #top-bar, #page-title { 
-    display: none !important; 
+/* 4. Reseta os espaços em branco e centraliza o conteúdo */
+#content-wrap {
+    position: relative !important;
+    margin: 0 auto !important;
+    padding-top: 15px !important;
+    width: 100% !important;
+    max-width: 900px !important;
 }
 
-/* 6. Centraliza o container principal */
 #main-content {
     margin: 0 auto !important;
-    padding: 20px !important;
+    padding: 10px 20px !important;
     width: 100% !important;
-    max-width: 900px;
 }
