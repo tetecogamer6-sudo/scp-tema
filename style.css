@@ -1,0 +1,52 @@
+@import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/normalize.min.css");
+@import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/black-highlighter.min.css");
+
+/* ======================================================
+   TEMA CUSTOMIZADO: INTELLIGENCE AGENCY
+   ====================================================== */
+
+:root {
+    --header-title: "INTELLIGENCE AGENCY";
+    --header-subtitle: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION";
+}
+
+/* Oculta o texto padrão em navegadores que não leem as variáveis */
+#header h1 a span,
+#header h2 span {
+    font-size: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Título Principal */
+#header h1 a::before {
+    content: "INTELLIGENCE AGENCY" !important;
+    font-size: 1.8rem !important;
+    font-weight: 900 !important;
+    color: #ffffff !important;
+    visibility: visible !important;
+    letter-spacing: 1px;
+}
+
+/* Subtítulo */
+#header h2::before {
+    content: "INTERNAL SECURITY / CONTRAINTELLIGENCE DIVISION" !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    color: #f0f0f0 !important;
+    visibility: visible !important;
+    display: block !important;
+    letter-spacing: 0.5px;
+}
+
+/* Remove a barra lateral padrão para focar no conteúdo */
+#side-bar { 
+    display: none !important; 
+}
+
+/* Centraliza e ajusta o corpo da página */
+#main-content {
+    margin: 0 auto !important;
+    padding: 20px !important;
+    width: 100% !important;
+    max-width: 900px;
+}
