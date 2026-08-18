@@ -6,15 +6,22 @@
    TEMA ESTÁVEL: INTELLIGENCE AGENCY (LIMPEZA TOTAL)
    ====================================================== */
 
-/* Oculta completamente qualquer menu de topo ou barra lateral */
-#top-bar,
+/* 1. Remove 100% da side-bar, top-bar e listas soltas */
 #side-bar,
-#page-title,
-#main-content > .page-tags {
+#side-bar *,
+#top-bar,
+#top-bar *,
+#page-title {
     display: none !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
 }
 
-/* Oculta textos e spans antigos sem quebrar o layout */
+/* 2. Oculta textos e spans antigos do Wikidot */
 #header h1 a span,
 #header h2 span,
 #header h2 {
@@ -24,10 +31,10 @@
     display: none !important;
 }
 
-/* Centraliza o bloco de texto ao lado do logo do tema */
+/* 3. Posiciona o bloco de títulos no cabeçalho */
 #header h1 {
     position: absolute !important;
-    top: 2.2rem !important;
+    top: 2.1rem !important;
     left: 8.5rem !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -69,16 +76,17 @@
     margin-top: 4px !important;
 }
 
-/* Ajusta o container principal da página */
+/* 4. Centraliza a área de conteúdo sem conflito de margens */
 #content-wrap {
     margin: 0 auto !important;
     padding-top: 20px !important;
     width: 100% !important;
     max-width: 900px !important;
+    position: relative !important;
 }
 
 #main-content {
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 0 15px !important;
     width: 100% !important;
 }
