@@ -1,181 +1,103 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,700&display=swap");
-@import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/normalize.min.css");
-@import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/black-highlighter.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Bauhaus+93&display=swap");
 
 /* ======================================================
-   TEMA: SCP INTERNATIONAL (AZUL & GLOBO) — CLEANED
+   TEMA OFICIAL SCP INTERNATIONAL (SIGMA-9 AZUL)
    ====================================================== */
 
-:root {
-  /* Titles */
-  --header-title: "INTERNATIONAL INTELLIGENCE AGENCY";
-  --header-subtitle: "GLOBAL SECURITY / FOREIGN CONTRAINTELLIGENCE APPARATUS";
-
-  /* Logo (no !important here) */
-  --logo-image: url("https://scp-int.wdfiles.com/local--files/component%3Atheme/logo.png");
-
-  /* Background: texture over blue gradient */
-  --header-gradient:
-    repeating-linear-gradient(
-      -45deg,
-      rgba(0, 0, 0, 0.35),
-      rgba(0, 0, 0, 0.35) 2px,
-      transparent 2px,
-      transparent 4px
-    ),
-    linear-gradient(to bottom, #001020 0%, #0b2440 60%, #153e6c 100%);
-
-  /* Colors */
-  --title-color: #ffffff;
-  --subtitle-color: #f7d468; /* gold */
-}
-
-/* --- Base header area --- */
+/* 1. Fundo do Cabeçalho com o Degradê Azul e Logo SCP-INT */
 #header {
-  background: var(--header-gradient);
-  border-bottom: 2px solid #204973;
-  color: var(--title-color);
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.25);
+    background: 
+        url("https://scp-int.wdfiles.com/local--files/component%3Atheme/logo.png") 15px 15px no-repeat,
+        repeating-linear-gradient(
+            -45deg,
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.45) 2px,
+            transparent 2px,
+            transparent 4px
+        ),
+        linear-gradient(to bottom, #050b14 0%, #0d1e30 65%, #183a5c 100%) !important;
+    background-size: 88px 88px, auto, auto !important;
+    height: 120px !important;
+    position: relative !important;
+    border-bottom: 2px solid #204973 !important;
 }
 
-/* Provide a centered inner container that mimics the sample width */
-#header .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 18px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+/* 2. Oculta os textos brutos padrão do Wikidot */
+#header h1 a span,
+#header h2 span {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    color: transparent !important;
+    display: none !important;
 }
 
-/* Left: logo + title block */
-#header .brand {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  min-width: 0;
+/* 3. Posiciona o Título e Subtítulo ao lado do Logo */
+#header h1 {
+    position: absolute !important;
+    top: 22px !important;
+    left: 115px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 20 !important;
 }
 
-/* Logo box: uses your variable */
-#header .brand .logo {
-  width: 86px;
-  height: 86px;
-  background-image: var(--logo-image);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  flex: 0 0 auto;
-  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.6));
+#header h1 a {
+    display: flex !important;
+    flex-direction: column !important;
+    text-decoration: none !important;
 }
 
-/* Title + subtitle stacked */
-#header .brand .title-wrap {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-  min-width: 0;
+/* Título Branco Estilo SCP International */
+#header h1 a::before {
+    content: "SCP International" !important;
+    font-family: "Bauhaus 93", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    line-height: 1.1 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 2px 2px 4px #000000, 0 0 8px rgba(0, 0, 0, 0.9) !important;
+    display: block !important;
 }
 
-#header .brand .title {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-weight: 900;
-  color: var(--title-color);
-  font-size: 38px;
-  letter-spacing: 0.6px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.85);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-  padding: 0;
+/* Subtítulo Dourado Oficial */
+#header h1 a::after {
+    content: "Wiki & Translation Archive" !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    color: #f7d468 !important; /* Amarelo dourado SCP-INT */
+    line-height: 1.2 !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 1px 1px 3px #000000 !important;
+    display: block !important;
+    margin-top: 3px !important;
 }
 
-/* Subtitle / tagline */
-#header .brand .subtitle {
-  font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--subtitle-color);
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.75);
-  margin-top: 6px;
-  margin-bottom: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+#header h2 {
+    display: none !important;
 }
 
-/* Right side - keep default elements (search, account area) aligned to the right */
-#header .header-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex: 0 0 auto;
-}
-
-/* Example styling for a search button to match the screenshot */
-#header .search-button {
-  background: linear-gradient(#5b2f2f, #3d1515);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.08);
-  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
-  font-size: 13px;
-}
-
-/* Hide sidebars and duplicate page-title only if those elements exist - avoid breaking other elements */
+/* 4. Oculta barras laterais e elementos quebrados */
 #side-bar,
 #side-bar *,
 #top-bar,
 #top-bar *,
 #page-title {
-  display: none !important;
-  visibility: hidden !important;
+    display: none !important;
+    visibility: hidden !important;
 }
 
-/* If the theme already has h1/h2 in #header, hide their inner spans so our .brand shows cleanly */
-#header h1 a span,
-#header h2 span {
-  display: none !important;
-  visibility: hidden !important;
+/* 5. Centraliza o container da página */
+#content-wrap {
+    margin: 0 auto !important;
+    padding-top: 15px !important;
+    width: 100% !important;
+    max-width: 900px !important;
 }
 
-/* Accessibility: keep the real heading in the DOM for screen readers (if needed)
-   If your theme uses h1/h2, we will not remove them — prefer keeping them for SEO/accessibility.
-   The .brand.title element above is the visual replacement. */
-
-/* Small-screen responsiveness */
-@media (max-width: 800px) {
-  #header .header-inner {
-    padding: 12px 14px;
-  }
-  #header .brand .logo {
-    width: 64px;
-    height: 64px;
-  }
-  #header .brand .title {
-    font-size: 22px;
-  }
-  #header .brand .subtitle {
-    font-size: 12px;
-  }
-  #header .header-actions {
-    gap: 10px;
-  }
-}
-
-/* Very small screens: stack vertically */
-@media (max-width: 460px) {
-  #header .header-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-  }
-  #header .brand {
-    justify-content: flex-start;
-  }
-  #header .header-actions {
-    justify-self: end;
-  }
+#main-content {
+    margin: 0 !important;
+    padding: 0 15px !important;
+    width: 100% !important;
 }
