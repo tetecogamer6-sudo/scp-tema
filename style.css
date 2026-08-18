@@ -1,105 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Bauhaus+93&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,700&display=swap");
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/normalize.min.css");
 @import url("https://cdn.scpwiki.com/theme/en/black-highlighter/css/min/black-highlighter.min.css");
 
 /* ======================================================
-   TEMA SCP INTERNATIONAL - INTELLIGENCE AGENCY (AZUL)
+   TEMA OFICIAL: SCP INTERNATIONAL (AZUL & GLOBO)
    ====================================================== */
 
-/* 1. Fundo do Cabeçalho: Degradê Azul Internacional + Textura Diagonal */
-#header {
-    background: 
-        repeating-linear-gradient(
-            -45deg,
-            rgba(0, 0, 0, 0.4),
-            rgba(0, 0, 0, 0.4) 2px,
-            transparent 2px,
-            transparent 4px
-        ),
-        linear-gradient(to bottom, #05090f 0%, #0d1e30 60%, #1a3b5c 100%) !important;
-    background-size: cover !important;
-    position: relative !important;
-    height: 120px !important;
-    border-bottom: 2px solid #204973 !important;
+:root {
+    /* 1. Títulos Globais */
+    --header-title: "INTERNATIONAL INTELLIGENCE AGENCY";
+    --header-subtitle: "GLOBAL SECURITY / FOREIGN CONTRAINTELLIGENCE APPARATUS";
+
+    /* 2. Logo Oficial SCP-INT (Globo) */
+    --logo-image: url("https://scp-int.wdfiles.com/local--files/component%3Atheme/logo.png") !important;
+
+    /* 3. Fundo Azul SCP International com textura */
+    --header-gradient: repeating-linear-gradient(
+        -45deg,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4) 2px,
+        transparent 2px,
+        transparent 4px
+    ), linear-gradient(to bottom, #001020 0%, #0b2440 60%, #153e6c 100%) !important;
+
+    /* 4. Cores dos Textos */
+    --title-color: #ffffff !important;
+    --subtitle-color: #f7d468 !important; /* Dourado clássico do SCP-INT */
 }
 
-/* 2. Logotipo Oficial SCP International (Globo) */
-#header::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 15px !important;
-    left: calc(max(15px, (100vw - 900px) / 2)) !important;
-    width: 90px !important;
-    height: 90px !important;
-    background-image: url("https://scp-int.wdfiles.com/local--files/component%3Atheme/logo.png") !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    z-index: 10 !important;
-    pointer-events: none !important;
-}
-
-/* 3. Oculta menus quebrados e textos nativos do Wikidot */
+/* Oculta barras laterais, menus soltos e títulos duplicados */
 #side-bar,
 #side-bar *,
 #top-bar,
 #top-bar *,
-#page-title,
-#header h2 {
+#page-title {
     display: none !important;
     visibility: hidden !important;
 }
 
-#header h1 a span {
-    display: none !important;
+/* Garante a aplicação do fundo azul no cabeçalho */
+#header {
+    background: var(--header-gradient) !important;
+    border-bottom: 2px solid #204973 !important;
 }
 
-/* 4. Posiciona o bloco de textos alinhado ao lado do Logo */
-#header h1 {
-    position: absolute !important;
-    top: 2rem !important;
-    left: calc(max(15px, (100vw - 900px) / 2) + 105px) !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    z-index: 20 !important;
+/* Alinha o logo e o título nativos do Black Highlighter */
+#header h1 a span,
+#header h2 span {
+    line-height: 0px !important;
+    max-height: 0px !important;
+    color: transparent !important;
+    text-shadow: none !important;
 }
 
-#header h1 a {
-    display: flex !important;
-    flex-direction: column !important;
-    text-decoration: none !important;
-}
-
-/* Título Principal Estilo SCP International (Branco com Sombra Forte) */
 #header h1 a::before {
     content: "INTERNATIONAL INTELLIGENCE AGENCY" !important;
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 1.75rem !important;
-    font-weight: 900 !important;
     color: #ffffff !important;
-    line-height: 1.1 !important;
-    letter-spacing: -0.01em !important;
-    text-transform: uppercase !important;
-    text-shadow: 2px 2px 4px #000000, 0 0 10px rgba(0, 0, 0, 0.9) !important;
-    display: block !important;
-}
-
-/* Subtítulo Dourado / Amarelado Oficial */
-#header h1 a::after {
-    content: "GLOBAL SECURITY / FOREIGN CONTRAINTELLIGENCE APPARATUS" !important;
     font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    color: #f7d468 !important; /* Cor dourada clássica do SCP-INT */
-    line-height: 1.2 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-    text-shadow: 1px 1px 3px #000000 !important;
-    display: block !important;
-    margin-top: 4px !important;
+    font-weight: 900 !important;
+    text-shadow: 2px 2px 4px #000000, 0 0 10px rgba(0, 0, 0, 0.9) !important;
 }
 
-/* 5. Centralização do container da página */
+#header h2 span::before {
+    content: "GLOBAL SECURITY / FOREIGN CONTRAINTELLIGENCE APPARATUS" !important;
+    color: #f7d468 !important;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-weight: 700 !important;
+    text-shadow: 1px 1px 3px #000000 !important;
+}
+
+/* Centraliza o container principal */
 #content-wrap {
     margin: 0 auto !important;
     padding-top: 20px !important;
@@ -108,7 +78,7 @@
 }
 
 #main-content {
-    margin: 0 auto !important;
+    margin: 0 !important;
     padding: 0 15px !important;
     width: 100% !important;
 }
